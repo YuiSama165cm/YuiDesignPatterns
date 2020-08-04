@@ -1,5 +1,8 @@
 package com.hz.yuidesignpatterns;
 
+import com.hz.yuidesignpatterns.flyweight_pattern.Ticket;
+import com.hz.yuidesignpatterns.flyweight_pattern.TicketFactory;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -12,6 +15,11 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+        Ticket ticket01 = TicketFactory.getTicket("北京","上海");
+        ticket01.showTicketInfo("上铺");
+        Ticket ticket02 = TicketFactory.getTicket("北京","上海");
+        ticket02.showTicketInfo("中铺");
+        Ticket ticket03 = TicketFactory.getTicket("北京","上海");
+        ticket03.showTicketInfo("下铺");
     }
 }
